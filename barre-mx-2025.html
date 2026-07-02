@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caso de éxito · Barre MX 2025 · ACMA</title>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif; color:#2A2A2A; background:#F4F4F2; font-size:10.5pt; line-height:1.55; }
+.page { max-width:900px; margin:0 auto; background:#FFFFFF; }
+.wrap { padding:0 48px; }
+@media(max-width:640px){ .wrap{padding:0 20px;} }
+
+header { padding:20px 48px; border-bottom:1px solid #EFEDE6; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; background:#fff; z-index:10; }
+.mock-badge { font-size:8pt; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#fff; background:#4D91C5; padding:5px 12px; border-radius:20px; }
+
+.kicker { font-size:9pt; letter-spacing:3px; text-transform:uppercase; color:#D13D6B; font-weight:700; margin-bottom:14px; }
+h1 { font-size:38px; font-weight:800; line-height:1.08; letter-spacing:-0.5px; color:#2A2A2A; margin-bottom:16px; }
+h1 em { color:#D13D6B; font-style:normal; }
+h2 { font-size:15pt; font-weight:800; color:#2A2A2A; margin-bottom:14px; padding-left:12px; border-left:3px solid #D13D6B; }
+h2.green { border-left-color:#A5C63B; }
+h2.blue { border-left-color:#4D91C5; }
+h3 { font-size:11pt; font-weight:700; color:#2A2A2A; margin-bottom:8px; }
+p { color:#6A6D75; margin-bottom:10px; }
+p.lead { font-size:12pt; color:#2A2A2A; }
+
+.hero { padding:56px 48px 40px; }
+.meta-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+.tag { display:inline-block; padding:5px 14px; border-radius:20px; font-size:9pt; font-weight:600; }
+.tag.soft { background:#FBEEF3; color:#D13D6B; }
+.tag.soft-green { background:#F3F7E1; color:#6A8A1F; }
+.tag.soft-blue { background:#EAF2F8; color:#2F6A9C; }
+.tag.ghost { background:transparent; color:#6A6D75; border:1px solid #E0DED8; }
+
+section { padding:34px 0; border-top:1px solid #F0EEEA; }
+section:first-of-type { border-top:none; }
+
+.divider { height:1px; background:#EFEDE6; margin:18px 0; }
+.divider.tri { height:3px; background:linear-gradient(90deg,#A5C63B,#D13D6B,#4D91C5); margin:0; border-radius:2px; }
+
+/* KPI grid */
+.kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:6px; }
+@media(max-width:640px){ .kpi-grid{grid-template-columns:repeat(2,1fr);} }
+.kpi { background:#FAFAFA; border-left:3px solid #D13D6B; border-radius:8px; padding:16px 14px; box-shadow:0 2px 6px rgba(0,0,0,0.04); }
+.kpi.green { border-left-color:#A5C63B; }
+.kpi.blue { border-left-color:#4D91C5; }
+.kpi .value { font-size:23pt; font-weight:800; color:#2A2A2A; line-height:1.05; }
+.kpi .delta { font-size:9pt; font-weight:700; color:#6A8A1F; margin-top:2px; }
+.kpi .delta.pink { color:#D13D6B; }
+.kpi .delta.blue { color:#2F6A9C; }
+.kpi .label { font-size:8pt; color:#6A6D75; text-transform:uppercase; letter-spacing:1.2px; margin-top:8px; }
+
+/* before / after */
+.ba { display:grid; grid-template-columns:1fr auto 1fr; gap:18px; align-items:center; margin-top:8px; }
+@media(max-width:640px){ .ba{grid-template-columns:1fr; } .ba .arrow{display:none;} }
+.ba-box { background:#FAFAFA; border-radius:10px; padding:20px; text-align:center; }
+.ba-box.start { border:1px solid #EFEDE6; }
+.ba-box.end { border:2px solid #D13D6B; background:#FBEEF3; }
+.ba-box .tinylabel { font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#9A9AA0; font-weight:700; margin-bottom:10px; }
+.ba-box.end .tinylabel { color:#D13D6B; }
+.ba-line { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed #E8E6E0; font-size:9.5pt; }
+.ba-line:last-child { border-bottom:none; }
+.ba-line b { color:#2A2A2A; }
+.arrow { font-size:22pt; color:#A5C63B; font-weight:800; }
+
+/* chart card */
+.chart-card { background:#FAFAFA; border:1px solid #EFEDE6; border-radius:10px; padding:22px 20px 14px; margin-top:6px; }
+.chart-card .ctitle { font-size:10.5pt; font-weight:700; color:#2A2A2A; margin-bottom:2px; }
+.chart-card .csub { font-size:8.5pt; color:#9A9AA0; margin-bottom:16px; }
+.legend { display:flex; gap:18px; margin-top:8px; font-size:8.5pt; color:#6A6D75; }
+.legend span { display:inline-flex; align-items:center; gap:6px; }
+.dot { width:10px; height:10px; border-radius:3px; display:inline-block; }
+
+.two { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+@media(max-width:640px){ .two{grid-template-columns:1fr;} }
+
+.card { background:#FAFAFA; border-left:3px solid #D13D6B; border-radius:8px; padding:18px; box-shadow:0 2px 6px rgba(0,0,0,0.04); }
+.card.green { border-left-color:#A5C63B; }
+.card.blue { border-left-color:#4D91C5; }
+.card .big { font-size:19pt; font-weight:800; color:#2A2A2A; }
+.card .cap { font-size:8.5pt; color:#6A6D75; text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+
+table { width:100%; border-collapse:collapse; font-size:8.7pt; margin-top:6px; }
+thead th { background:#FAFAFA; color:#D13D6B; text-transform:uppercase; font-size:7.5pt; letter-spacing:0.8px; padding:10px 10px; font-weight:700; border-bottom:1px solid #EFEDE6; text-align:left; }
+tbody td { padding:9px 10px; color:#2A2A2A; border-bottom:1px solid #EFEDE6; }
+tbody tr:nth-child(even) td { background:#FDFCFA; }
+.table-wrap { overflow-x:auto; }
+
+.callout { background:#F3F7E1; border-left:4px solid #A5C63B; padding:16px 18px; border-radius:6px; margin:8px 0; }
+.callout .clabel { font-size:8pt; color:#6A8A1F; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:5px; }
+.callout p { color:#3A4A1F; margin:0; }
+
+.strat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:6px; }
+@media(max-width:640px){ .strat-grid{grid-template-columns:1fr;} }
+.strat { border:1px solid #EFEDE6; border-radius:10px; padding:20px 18px; }
+.strat .num { font-size:9pt; font-weight:800; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; margin-bottom:12px; }
+.strat.p .num { background:#D13D6B; } .strat.g .num { background:#A5C63B; } .strat.b .num { background:#4D91C5; }
+.strat ul { margin:8px 0 0 0; padding-left:16px; }
+.strat li { font-size:9pt; color:#6A6D75; margin-bottom:4px; }
+
+.content-mix { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:6px; }
+@media(max-width:640px){ .content-mix{grid-template-columns:repeat(2,1fr);} }
+.cm { text-align:center; background:#FAFAFA; border-radius:8px; padding:16px 10px; border:1px solid #EFEDE6; }
+.cm .n { font-size:17pt; font-weight:800; color:#D13D6B; }
+.cm.green .n { color:#6A8A1F; } .cm.blue .n { color:#2F6A9C; }
+.cm .l { font-size:8pt; color:#6A6D75; text-transform:uppercase; letter-spacing:0.8px; margin-top:4px; }
+
+footer { padding:34px 48px 44px; border-top:1px solid #EFEDE6; color:#9A9AA0; font-size:8.5pt; }
+footer .fbrand { margin-bottom:12px; }
+.note { font-size:8pt; color:#B0AFA8; font-style:italic; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <svg width="132" height="34" viewBox="0 0 132 34" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="4"  width="8" height="26" rx="2" fill="#D13D6B"/>
+  <rect x="11" y="10" width="8" height="20" rx="2" fill="#A5C63B"/>
+  <rect x="22" y="15" width="8" height="15" rx="2" fill="#4D91C5"/>
+  <text x="40" y="27" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="1" fill="#2A2A2A">ACMA</text>
+</svg>
+  <span style="font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; color:#9A9AA0; font-weight:700;">Reporte anual · 2025</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="kicker">Caso de éxito · Social Media + Performance</div>
+  <h1>Barre MX &mdash; cómo convertimos una comunidad en <em>reservas reales</em> durante 2025</h1>
+  <p class="lead">De 21,000 a 36,000 seguidores y una máquina de reservas de clases construida sobre contenido con propósito y pauta orientada a conversión.</p>
+  <div class="meta-row">
+    <span class="tag soft">@barre.mx</span>
+    <span class="tag soft-green">Fitness · Barré</span>
+    <span class="tag soft-blue">Ene – Dic 2025</span>
+    <span class="tag ghost">Ciudad de México</span>
+  </div>
+</div>
+<div class="divider tri"></div>
+
+<div class="wrap">
+
+<!-- RESUMEN EJECUTIVO -->
+<section>
+  <div class="kicker">Resumen del año</div>
+  <h2>Los números que movimos</h2>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="value">36,000</div>
+      <div class="delta">+15,000 · +71%</div>
+      <div class="label">Seguidores</div>
+    </div>
+    <div class="kpi green">
+      <div class="value">5.6%</div>
+      <div class="delta">×2 vs. inicio (2.8%)</div>
+      <div class="label">Engagement rate</div>
+    </div>
+    <div class="kpi blue">
+      <div class="value">4,345</div>
+      <div class="delta blue">+230% mensual</div>
+      <div class="label">Reservas vía digital (año)</div>
+    </div>
+    <div class="kpi">
+      <div class="value">12.4k</div>
+      <div class="delta pink">+288%</div>
+      <div class="label">Sesiones web / mes (Dic)</div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:18px">
+    <div class="clabel">La historia en una línea</div>
+    <p>Empezamos el año con una comunidad tibia y sin trazabilidad de reservas. Terminamos con +71% de seguidores, el engagement duplicado y un canal digital que hoy genera <b>610 reservas al mes</b> con un costo por reserva 52% más barato.</p>
+  </div>
+</section>
+
+<!-- ANTES / DESPUES -->
+<section>
+  <div class="kicker">Punto de partida vs. cierre</div>
+  <h2 class="green">Enero 2025 → Diciembre 2025</h2>
+  <div class="ba">
+    <div class="ba-box start">
+      <div class="tinylabel">Enero 2025 · inicio</div>
+      <div class="ba-line"><span>Seguidores</span><b>21,000</b></div>
+      <div class="ba-line"><span>Engagement rate</span><b>2.8%</b></div>
+      <div class="ba-line"><span>Interacciones/mes</span><b>26,000</b></div>
+      <div class="ba-line"><span>Alcance/mes</span><b>108,000</b></div>
+      <div class="ba-line"><span>Reservas digital/mes</span><b>185</b></div>
+      <div class="ba-line"><span>Sesiones web/mes</span><b>3,200</b></div>
+      <div class="ba-line"><span>Costo por reserva</span><b>$84</b></div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="ba-box end">
+      <div class="tinylabel">Diciembre 2025 · cierre</div>
+      <div class="ba-line"><span>Seguidores</span><b>36,000</b></div>
+      <div class="ba-line"><span>Engagement rate</span><b>5.6%</b></div>
+      <div class="ba-line"><span>Interacciones/mes</span><b>41,300</b></div>
+      <div class="ba-line"><span>Alcance/mes</span><b>284,000</b></div>
+      <div class="ba-line"><span>Reservas digital/mes</span><b>610</b></div>
+      <div class="ba-line"><span>Sesiones web/mes</span><b>12,400</b></div>
+      <div class="ba-line"><span>Costo por reserva</span><b>$40</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRATEGIA -->
+<section>
+  <div class="kicker">Qué hicimos</div>
+  <h2 class="blue">Estrategia: 3 frentes, un mismo objetivo</h2>
+  <p>Social media orgánico y performance marketing trabajando coordinados, cada frente con su KPI dueño.</p>
+  <div class="strat-grid">
+    <div class="strat p">
+      <div class="num">1</div>
+      <h3>Reservas</h3>
+      <p style="font-size:9pt;margin:0">El norte del proyecto. Todo empuja a llenar clases.</p>
+      <ul>
+        <li>Campañas de pauta a reserva directa</li>
+        <li>Link tracking por canal y campaña</li>
+        <li>Ofertas de primera clase y paquetes</li>
+        <li>Retargeting de visitantes web</li>
+      </ul>
+    </div>
+    <div class="strat g">
+      <div class="num">2</div>
+      <h3>Seguidores</h3>
+      <p style="font-size:9pt;margin:0">Crecimiento cualificado, no vanidad.</p>
+      <ul>
+        <li>Reels de descubrimiento semanales</li>
+        <li>Colaboraciones con instructoras y aliados</li>
+        <li>Contenido educativo del método barré</li>
+        <li>Pauta de crecimiento segmentada CDMX</li>
+      </ul>
+    </div>
+    <div class="strat b">
+      <div class="num">3</div>
+      <h3>Interacciones</h3>
+      <p style="font-size:9pt;margin:0">Comunidad activa = alcance orgánico.</p>
+      <ul>
+        <li>Stories interactivas diarias</li>
+        <li>Preguntas, encuestas y retos</li>
+        <li>Respuesta a DMs y comentarios &lt;2h</li>
+        <li>Contenido guardable (tips, rutinas)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GRAFICA SEGUIDORES -->
+<section>
+  <div class="kicker">Crecimiento de comunidad</div>
+  <h2>Seguidores mes a mes</h2>
+  <div class="chart-card">
+    <div class="ctitle">Evolución de seguidores · 2025</div>
+    <div class="csub">Ganancia neta acumulada de +15,000 seguidores</div>
+    <svg viewBox="0 0 760 220" width="100%" style="overflow:visible"><line x1="40" y1="40.0" x2="720" y2="40.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="44.0" text-anchor="end" font-size="9" fill="#9A9AA0">37k</text><line x1="40" y1="75.0" x2="720" y2="75.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="79.0" text-anchor="end" font-size="9" fill="#9A9AA0">32.8k</text><line x1="40" y1="110.0" x2="720" y2="110.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="114.0" text-anchor="end" font-size="9" fill="#9A9AA0">28.5k</text><line x1="40" y1="145.0" x2="720" y2="145.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="149.0" text-anchor="end" font-size="9" fill="#9A9AA0">24.2k</text><line x1="40" y1="180.0" x2="720" y2="180.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="184.0" text-anchor="end" font-size="9" fill="#9A9AA0">20k</text><path d="M 40.0,180 L 40.0,171.8 L 101.8,160.2 L 163.6,154.5 L 225.5,150.4 L 287.3,138.8 L 349.1,128.1 L 410.9,123.2 L 472.7,117.4 L 534.5,98.5 L 596.4,82.0 L 658.2,64.7 L 720.0,48.2 L 720.0,180 Z" fill="#D13D6B" opacity="0.08"/><path d="M 40.0,171.8 L 101.8,160.2 L 163.6,154.5 L 225.5,150.4 L 287.3,138.8 L 349.1,128.1 L 410.9,123.2 L 472.7,117.4 L 534.5,98.5 L 596.4,82.0 L 658.2,64.7 L 720.0,48.2" fill="none" stroke="#D13D6B" stroke-width="2.5" stroke-linejoin="round"/><circle cx="40.0" cy="171.8" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="101.8" cy="160.2" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="163.6" cy="154.5" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="225.5" cy="150.4" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="287.3" cy="138.8" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="349.1" cy="128.1" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="410.9" cy="123.2" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="472.7" cy="117.4" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="534.5" cy="98.5" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="596.4" cy="82.0" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="658.2" cy="64.7" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="720.0" cy="48.2" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><text x="40.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ene</text><text x="101.8" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Feb</text><text x="163.6" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Mar</text><text x="225.5" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Abr</text><text x="287.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">May</text><text x="349.1" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jun</text><text x="410.9" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jul</text><text x="472.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ago</text><text x="534.5" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Sep</text><text x="596.4" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Oct</text><text x="658.2" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Nov</text><text x="720.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Dic</text></svg>
+  </div>
+  <div class="two" style="margin-top:14px">
+    <div class="card"><div class="big">+15,000</div><div class="cap">Seguidores ganados en el año</div></div>
+    <div class="card green"><div class="big">+1,250</div><div class="cap">Promedio neto mensual</div></div>
+  </div>
+</section>
+
+<!-- GRAFICA INTERACCIONES + ENGAGEMENT -->
+<section>
+  <div class="kicker">Interacciones</div>
+  <h2 class="green">Actividad de la comunidad</h2>
+  <div class="chart-card">
+    <div class="ctitle">Interacciones totales por mes</div>
+    <div class="csub">Likes + comentarios + guardados + compartidos · 426,000 en el año</div>
+    <svg viewBox="0 0 760 220" width="100%"><line x1="40" y1="40.0" x2="720" y2="40.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="44.0" text-anchor="end" font-size="9" fill="#9A9AA0">61.4k</text><line x1="40" y1="75.0" x2="720" y2="75.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="79.0" text-anchor="end" font-size="9" fill="#9A9AA0">46k</text><line x1="40" y1="110.0" x2="720" y2="110.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="114.0" text-anchor="end" font-size="9" fill="#9A9AA0">30.7k</text><line x1="40" y1="145.0" x2="720" y2="145.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="149.0" text-anchor="end" font-size="9" fill="#9A9AA0">15.3k</text><line x1="40" y1="180.0" x2="720" y2="180.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="184.0" text-anchor="end" font-size="9" fill="#9A9AA0">0</text><rect x="52.5" y="120.7" width="31.7" height="59.3" rx="3" fill="#A5C63B"/><rect x="109.1" y="112.7" width="31.7" height="67.3" rx="3" fill="#A5C63B"/><rect x="165.8" y="123.4" width="31.7" height="56.6" rx="3" fill="#A5C63B"/><rect x="222.5" y="128.9" width="31.7" height="51.1" rx="3" fill="#A5C63B"/><rect x="279.1" y="103.4" width="31.7" height="76.6" rx="3" fill="#A5C63B"/><rect x="335.8" y="95.2" width="31.7" height="84.8" rx="3" fill="#A5C63B"/><rect x="392.5" y="112.0" width="31.7" height="68.0" rx="3" fill="#A5C63B"/><rect x="449.1" y="116.4" width="31.7" height="63.6" rx="3" fill="#A5C63B"/><rect x="505.8" y="73.9" width="31.7" height="106.1" rx="3" fill="#A5C63B"/><rect x="562.5" y="63.2" width="31.7" height="116.8" rx="3" fill="#A5C63B"/><rect x="619.1" y="52.7" width="31.7" height="127.3" rx="3" fill="#A5C63B"/><rect x="675.8" y="85.8" width="31.7" height="94.2" rx="3" fill="#A5C63B"/><text x="68.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ene</text><text x="125.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Feb</text><text x="181.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Mar</text><text x="238.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Abr</text><text x="295.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">May</text><text x="351.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jun</text><text x="408.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jul</text><text x="465.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ago</text><text x="521.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Sep</text><text x="578.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Oct</text><text x="635.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Nov</text><text x="691.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Dic</text></svg>
+  </div>
+  <div class="chart-card" style="margin-top:16px">
+    <div class="ctitle">Engagement rate</div>
+    <div class="csub">De 2.8% a 5.6% — el doble de comunidad activa</div>
+    <svg viewBox="0 0 760 220" width="100%" style="overflow:visible"><line x1="40" y1="40.0" x2="720" y2="40.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="44.0" text-anchor="end" font-size="9" fill="#9A9AA0">6%</text><line x1="40" y1="75.0" x2="720" y2="75.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="79.0" text-anchor="end" font-size="9" fill="#9A9AA0">5%</text><line x1="40" y1="110.0" x2="720" y2="110.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="114.0" text-anchor="end" font-size="9" fill="#9A9AA0">3%</text><line x1="40" y1="145.0" x2="720" y2="145.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="149.0" text-anchor="end" font-size="9" fill="#9A9AA0">2%</text><line x1="40" y1="180.0" x2="720" y2="180.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="184.0" text-anchor="end" font-size="9" fill="#9A9AA0">0%</text><path d="M 40.0,180 L 40.0,119.7 L 101.8,111.1 L 163.6,117.5 L 225.5,121.8 L 287.3,102.5 L 349.1,91.7 L 410.9,104.6 L 472.7,108.9 L 534.5,78.8 L 596.4,70.2 L 658.2,55.1 L 720.0,59.4 L 720.0,180 Z" fill="#4D91C5" opacity="0.08"/><path d="M 40.0,119.7 L 101.8,111.1 L 163.6,117.5 L 225.5,121.8 L 287.3,102.5 L 349.1,91.7 L 410.9,104.6 L 472.7,108.9 L 534.5,78.8 L 596.4,70.2 L 658.2,55.1 L 720.0,59.4" fill="none" stroke="#4D91C5" stroke-width="2.5" stroke-linejoin="round"/><circle cx="40.0" cy="119.7" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="101.8" cy="111.1" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="163.6" cy="117.5" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="225.5" cy="121.8" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="287.3" cy="102.5" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="349.1" cy="91.7" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="410.9" cy="104.6" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="472.7" cy="108.9" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="534.5" cy="78.8" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="596.4" cy="70.2" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="658.2" cy="55.1" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="720.0" cy="59.4" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><text x="40.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ene</text><text x="101.8" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Feb</text><text x="163.6" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Mar</text><text x="225.5" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Abr</text><text x="287.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">May</text><text x="349.1" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jun</text><text x="410.9" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jul</text><text x="472.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ago</text><text x="534.5" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Sep</text><text x="596.4" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Oct</text><text x="658.2" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Nov</text><text x="720.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Dic</text></svg>
+  </div>
+  <div class="kpi-grid" style="margin-top:16px">
+    <div class="kpi"><div class="value">264.1k</div><div class="label">Likes (año)</div></div>
+    <div class="kpi green"><div class="value">46.9k</div><div class="label">Comentarios</div></div>
+    <div class="kpi blue"><div class="value">76.7k</div><div class="label">Guardados</div></div>
+    <div class="kpi"><div class="value">38.3k</div><div class="label">Compartidos</div></div>
+  </div>
+</section>
+
+<!-- COMUNIDAD -->
+<section>
+  <div class="kicker">Creación de comunidad</div>
+  <h2 class="blue">Más allá del número de seguidores</h2>
+  <p>Métricas de relación real con la audiencia — lo que sostiene el crecimiento y alimenta las reservas.</p>
+  <div class="content-mix">
+    <div class="cm"><div class="n">2,940</div><div class="l">DMs / conversaciones (año)</div></div>
+    <div class="cm green"><div class="n">128</div><div class="l">UGC / menciones</div></div>
+    <div class="cm blue"><div class="n">3,400</div><div class="l">Views prom. por story</div></div>
+    <div class="cm"><div class="n">71%</div><div class="l">Alcance de no-seguidores</div></div>
+    <div class="cm green"><div class="n">24</div><div class="l">Colaboraciones</div></div>
+    <div class="cm blue"><div class="n">88%</div><div class="l">Tasa respuesta DM</div></div>
+    <div class="cm"><div class="n">640</div><div class="l">Clics al sitio / mes</div></div>
+    <div class="cm green"><div class="n">4.9★</div><div class="l">Rating Google</div></div>
+  </div>
+</section>
+
+<!-- RESERVAS -->
+<section>
+  <div class="kicker">El objetivo de negocio</div>
+  <h2>Incremento en reservas de clases</h2>
+  <div class="chart-card">
+    <div class="ctitle">Reservas generadas por canal digital</div>
+    <div class="csub">De 185 a 610 reservas mensuales · 4,345 en el año</div>
+    <svg viewBox="0 0 760 220" width="100%"><line x1="40" y1="40.0" x2="720" y2="40.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="44.0" text-anchor="end" font-size="9" fill="#9A9AA0">693</text><line x1="40" y1="75.0" x2="720" y2="75.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="79.0" text-anchor="end" font-size="9" fill="#9A9AA0">520</text><line x1="40" y1="110.0" x2="720" y2="110.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="114.0" text-anchor="end" font-size="9" fill="#9A9AA0">346</text><line x1="40" y1="145.0" x2="720" y2="145.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="149.0" text-anchor="end" font-size="9" fill="#9A9AA0">173</text><line x1="40" y1="180.0" x2="720" y2="180.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="184.0" text-anchor="end" font-size="9" fill="#9A9AA0">0</text><rect x="52.5" y="142.6" width="31.7" height="37.4" rx="3" fill="#D13D6B"/><rect x="109.1" y="131.5" width="31.7" height="48.5" rx="3" fill="#D13D6B"/><rect x="165.8" y="138.6" width="31.7" height="41.4" rx="3" fill="#D13D6B"/><rect x="222.5" y="143.6" width="31.7" height="36.4" rx="3" fill="#D13D6B"/><rect x="279.1" y="117.4" width="31.7" height="62.6" rx="3" fill="#D13D6B"/><rect x="335.8" y="106.3" width="31.7" height="73.7" rx="3" fill="#D13D6B"/><rect x="392.5" y="121.4" width="31.7" height="58.6" rx="3" fill="#D13D6B"/><rect x="449.1" y="116.4" width="31.7" height="63.6" rx="3" fill="#D13D6B"/><rect x="505.8" y="85.1" width="31.7" height="94.9" rx="3" fill="#D13D6B"/><rect x="562.5" y="69.9" width="31.7" height="110.1" rx="3" fill="#D13D6B"/><rect x="619.1" y="52.7" width="31.7" height="127.3" rx="3" fill="#D13D6B"/><rect x="675.8" y="56.8" width="31.7" height="123.2" rx="3" fill="#D13D6B"/><text x="68.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ene</text><text x="125.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Feb</text><text x="181.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Mar</text><text x="238.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Abr</text><text x="295.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">May</text><text x="351.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jun</text><text x="408.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jul</text><text x="465.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ago</text><text x="521.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Sep</text><text x="578.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Oct</text><text x="635.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Nov</text><text x="691.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Dic</text></svg>
+  </div>
+  <div class="kpi-grid" style="margin-top:16px">
+    <div class="kpi"><div class="value">4,345</div><div class="label">Reservas totales (año)</div></div>
+    <div class="kpi green"><div class="value">2,520</div><div class="label">Vía pauta</div></div>
+    <div class="kpi blue"><div class="value">1,825</div><div class="label">Vía orgánico</div></div>
+    <div class="kpi"><div class="value">+230%</div><div class="label">Crecimiento mensual</div></div>
+  </div>
+</section>
+
+<!-- TRAFICO WEB -->
+<section>
+  <div class="kicker">Tráfico del sitio web</div>
+  <h2 class="green">De redes al sitio</h2>
+  <div class="chart-card">
+    <div class="ctitle">Sesiones web por mes</div>
+    <div class="csub">Redes sociales como fuente #1 de tráfico — de 3,200 a 12,400 sesiones/mes</div>
+    <svg viewBox="0 0 760 220" width="100%" style="overflow:visible"><line x1="40" y1="40.0" x2="720" y2="40.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="44.0" text-anchor="end" font-size="9" fill="#9A9AA0">13.5k</text><line x1="40" y1="75.0" x2="720" y2="75.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="79.0" text-anchor="end" font-size="9" fill="#9A9AA0">10.1k</text><line x1="40" y1="110.0" x2="720" y2="110.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="114.0" text-anchor="end" font-size="9" fill="#9A9AA0">6.8k</text><line x1="40" y1="145.0" x2="720" y2="145.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="149.0" text-anchor="end" font-size="9" fill="#9A9AA0">3.4k</text><line x1="40" y1="180.0" x2="720" y2="180.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="184.0" text-anchor="end" font-size="9" fill="#9A9AA0">0</text><path d="M 40.0,180 L 40.0,146.8 L 101.8,137.5 L 163.6,142.7 L 225.5,147.9 L 287.3,124.0 L 349.1,114.7 L 410.9,126.1 L 472.7,121.9 L 534.5,87.7 L 596.4,74.2 L 658.2,47.3 L 720.0,51.4 L 720.0,180 Z" fill="#4D91C5" opacity="0.08"/><path d="M 40.0,146.8 L 101.8,137.5 L 163.6,142.7 L 225.5,147.9 L 287.3,124.0 L 349.1,114.7 L 410.9,126.1 L 472.7,121.9 L 534.5,87.7 L 596.4,74.2 L 658.2,47.3 L 720.0,51.4" fill="none" stroke="#4D91C5" stroke-width="2.5" stroke-linejoin="round"/><circle cx="40.0" cy="146.8" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="101.8" cy="137.5" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="163.6" cy="142.7" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="225.5" cy="147.9" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="287.3" cy="124.0" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="349.1" cy="114.7" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="410.9" cy="126.1" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="472.7" cy="121.9" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="534.5" cy="87.7" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="596.4" cy="74.2" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="658.2" cy="47.3" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><circle cx="720.0" cy="51.4" r="3.5" fill="#fff" stroke="#4D91C5" stroke-width="2.5"/><text x="40.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ene</text><text x="101.8" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Feb</text><text x="163.6" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Mar</text><text x="225.5" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Abr</text><text x="287.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">May</text><text x="349.1" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jun</text><text x="410.9" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jul</text><text x="472.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ago</text><text x="534.5" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Sep</text><text x="596.4" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Oct</text><text x="658.2" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Nov</text><text x="720.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Dic</text></svg>
+  </div>
+  <div class="kpi-grid" style="margin-top:16px">
+    <div class="kpi blue"><div class="value">80,800</div><div class="label">Sesiones (año)</div></div>
+    <div class="kpi"><div class="value">64%</div><div class="label">Tráfico desde social</div></div>
+    <div class="kpi green"><div class="value">2:48</div><div class="label">Duración media sesión</div></div>
+    <div class="kpi blue"><div class="value">5.4%</div><div class="label">Conversión a reserva</div></div>
+  </div>
+</section>
+
+<!-- PERFORMANCE MARKETING -->
+<section>
+  <div class="kicker">Performance marketing</div>
+  <h2 class="blue">La pauta que sí paga</h2>
+  <div class="chart-card">
+    <div class="ctitle">Costo por reserva (CPA) vs. inversión</div>
+    <div class="csub">Bajamos el CPA de $84 a $40 mientras escalábamos la inversión</div>
+    <svg viewBox="0 0 760 220" width="100%" style="overflow:visible"><line x1="40" y1="40.0" x2="720" y2="40.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="44.0" text-anchor="end" font-size="9" fill="#9A9AA0">$99</text><line x1="40" y1="75.0" x2="720" y2="75.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="79.0" text-anchor="end" font-size="9" fill="#9A9AA0">$74</text><line x1="40" y1="110.0" x2="720" y2="110.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="114.0" text-anchor="end" font-size="9" fill="#9A9AA0">$50</text><line x1="40" y1="145.0" x2="720" y2="145.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="149.0" text-anchor="end" font-size="9" fill="#9A9AA0">$25</text><line x1="40" y1="180.0" x2="720" y2="180.0" stroke="#EFEDE6" stroke-width="1"/><text x="32" y="184.0" text-anchor="end" font-size="9" fill="#9A9AA0">$0</text><path d="M 40.0,180 L 40.0,61.2 L 101.8,78.2 L 163.6,85.3 L 225.5,85.3 L 287.3,78.2 L 349.1,86.7 L 410.9,95.2 L 472.7,95.2 L 534.5,86.7 L 596.4,103.6 L 658.2,106.5 L 720.0,123.4 L 720.0,180 Z" fill="#D13D6B" opacity="0.08"/><path d="M 40.0,61.2 L 101.8,78.2 L 163.6,85.3 L 225.5,85.3 L 287.3,78.2 L 349.1,86.7 L 410.9,95.2 L 472.7,95.2 L 534.5,86.7 L 596.4,103.6 L 658.2,106.5 L 720.0,123.4" fill="none" stroke="#D13D6B" stroke-width="2.5" stroke-linejoin="round"/><circle cx="40.0" cy="61.2" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="101.8" cy="78.2" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="163.6" cy="85.3" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="225.5" cy="85.3" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="287.3" cy="78.2" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="349.1" cy="86.7" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="410.9" cy="95.2" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="472.7" cy="95.2" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="534.5" cy="86.7" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="596.4" cy="103.6" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="658.2" cy="106.5" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><circle cx="720.0" cy="123.4" r="3.5" fill="#fff" stroke="#D13D6B" stroke-width="2.5"/><text x="40.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ene</text><text x="101.8" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Feb</text><text x="163.6" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Mar</text><text x="225.5" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Abr</text><text x="287.3" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">May</text><text x="349.1" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jun</text><text x="410.9" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Jul</text><text x="472.7" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Ago</text><text x="534.5" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Sep</text><text x="596.4" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Oct</text><text x="658.2" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Nov</text><text x="720.0" y="198" text-anchor="middle" font-size="9" fill="#6A6D75">Dic</text></svg>
+  </div>
+  <div class="kpi-grid" style="margin-top:16px">
+    <div class="kpi"><div class="value">$150k</div><div class="label">Inversión en pauta (año)</div></div>
+    <div class="kpi green"><div class="value">$40</div><div class="label">CPA final por reserva</div></div>
+    <div class="kpi blue"><div class="value">2,520</div><div class="label">Reservas vía ads</div></div>
+    <div class="kpi"><div class="value">4.2×</div><div class="label">ROAS estimado</div></div>
+  </div>
+</section>
+
+<!-- TABLA MENSUAL -->
+<section>
+  <div class="kicker">Detalle</div>
+  <h2>Tablero mensual completo</h2>
+  <p>La tabla base que el equipo actualizará con datos reales cada mes.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr>
+      <th>Mes</th><th>Seguidores</th><th>Nuevos</th><th>Interacciones</th><th>Eng.</th><th>Alcance</th><th>Sesiones web</th><th>Reservas</th>
+    </tr></thead>
+    <tbody><tr>
+      <td style="font-weight:700">Ene</td>
+      <td>21,000</td>
+      <td style="color:#6A8A1F;font-weight:600">+1,150</td>
+      <td>26,000</td>
+      <td>2.8%</td>
+      <td>108,000</td>
+      <td>3,200</td>
+      <td style="color:#D13D6B;font-weight:700">185</td>
+    </tr><tr>
+      <td style="font-weight:700">Feb</td>
+      <td>22,400</td>
+      <td style="color:#6A8A1F;font-weight:600">+1,400</td>
+      <td>29,500</td>
+      <td>3.2%</td>
+      <td>132,000</td>
+      <td>4,100</td>
+      <td style="color:#D13D6B;font-weight:700">240</td>
+    </tr><tr>
+      <td style="font-weight:700">Mar</td>
+      <td>23,100</td>
+      <td style="color:#6A8A1F;font-weight:600">+700</td>
+      <td>24,800</td>
+      <td>2.9%</td>
+      <td>98,000</td>
+      <td>3,600</td>
+      <td style="color:#D13D6B;font-weight:700">205</td>
+    </tr><tr>
+      <td style="font-weight:700">Abr</td>
+      <td>23,600</td>
+      <td style="color:#6A8A1F;font-weight:600">+500</td>
+      <td>22,400</td>
+      <td>2.7%</td>
+      <td>86,000</td>
+      <td>3,100</td>
+      <td style="color:#D13D6B;font-weight:700">180</td>
+    </tr><tr>
+      <td style="font-weight:700">May</td>
+      <td>25,000</td>
+      <td style="color:#6A8A1F;font-weight:600">+1,400</td>
+      <td>33,600</td>
+      <td>3.6%</td>
+      <td>165,000</td>
+      <td>5,400</td>
+      <td style="color:#D13D6B;font-weight:700">310</td>
+    </tr><tr>
+      <td style="font-weight:700">Jun</td>
+      <td>26,300</td>
+      <td style="color:#6A8A1F;font-weight:600">+1,300</td>
+      <td>37,200</td>
+      <td>4.1%</td>
+      <td>198,000</td>
+      <td>6,300</td>
+      <td style="color:#D13D6B;font-weight:700">365</td>
+    </tr><tr>
+      <td style="font-weight:700">Jul</td>
+      <td>26,900</td>
+      <td style="color:#6A8A1F;font-weight:600">+600</td>
+      <td>29,800</td>
+      <td>3.5%</td>
+      <td>142,000</td>
+      <td>5,200</td>
+      <td style="color:#D13D6B;font-weight:700">290</td>
+    </tr><tr>
+      <td style="font-weight:700">Ago</td>
+      <td>27,600</td>
+      <td style="color:#6A8A1F;font-weight:600">+700</td>
+      <td>27,900</td>
+      <td>3.3%</td>
+      <td>128,000</td>
+      <td>5,600</td>
+      <td style="color:#D13D6B;font-weight:700">315</td>
+    </tr><tr>
+      <td style="font-weight:700">Sep</td>
+      <td>29,900</td>
+      <td style="color:#6A8A1F;font-weight:600">+2,300</td>
+      <td>46,500</td>
+      <td>4.7%</td>
+      <td>268,000</td>
+      <td>8,900</td>
+      <td style="color:#D13D6B;font-weight:700">470</td>
+    </tr><tr>
+      <td style="font-weight:700">Oct</td>
+      <td>31,900</td>
+      <td style="color:#6A8A1F;font-weight:600">+2,000</td>
+      <td>51,200</td>
+      <td>5.1%</td>
+      <td>312,000</td>
+      <td>10,200</td>
+      <td style="color:#D13D6B;font-weight:700">545</td>
+    </tr><tr>
+      <td style="font-weight:700">Nov</td>
+      <td>34,000</td>
+      <td style="color:#6A8A1F;font-weight:600">+2,100</td>
+      <td>55,800</td>
+      <td>5.8%</td>
+      <td>358,000</td>
+      <td>12,800</td>
+      <td style="color:#D13D6B;font-weight:700">630</td>
+    </tr><tr>
+      <td style="font-weight:700">Dic</td>
+      <td>36,000</td>
+      <td style="color:#6A8A1F;font-weight:600">+2,000</td>
+      <td>41,300</td>
+      <td>5.6%</td>
+      <td>284,000</td>
+      <td>12,400</td>
+      <td style="color:#D13D6B;font-weight:700">610</td>
+    </tr></tbody>
+  </table>
+  </div>
+  <p class="note" style="margin-top:12px">* Plantilla base del reporte. Reemplazar cada métrica con los datos reales del cliente antes de compartir.</p>
+</section>
+
+<!-- CIERRE -->
+<section>
+  <div class="kicker">En resumen</div>
+  <h2 class="green">Por qué funcionó</h2>
+  <div class="two">
+    <div class="card"><h3 style="color:#D13D6B">Contenido con propósito</h3><p style="margin:0;font-size:9.5pt">Cada pieza tenía un trabajo: descubrir, conectar o convertir. Nada de contenido de relleno.</p></div>
+    <div class="card green"><h3 style="color:#6A8A1F">Comunidad primero</h3><p style="margin:0;font-size:9.5pt">Respuesta rápida y conversación real. Una comunidad activa hace que el algoritmo trabaje gratis.</p></div>
+    <div class="card blue"><h3 style="color:#2F6A9C">Pauta trazable</h3><p style="margin:0;font-size:9.5pt">Cada peso invertido con seguimiento a reserva. Optimización semanal sobre lo que sí llena clases.</p></div>
+    <div class="card"><h3 style="color:#D13D6B">Un solo norte</h3><p style="margin:0;font-size:9.5pt">Seguidores e interacciones importan porque alimentan el objetivo real: reservas de clases.</p></div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="fbrand"><svg width="132" height="34" viewBox="0 0 132 34" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="4"  width="8" height="26" rx="2" fill="#D13D6B"/>
+  <rect x="11" y="10" width="8" height="20" rx="2" fill="#A5C63B"/>
+  <rect x="22" y="15" width="8" height="15" rx="2" fill="#4D91C5"/>
+  <text x="40" y="27" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="1" fill="#2A2A2A">ACMA</text>
+</svg></div>
+  Caso de éxito Barre MX · Ejercicio 2025
+</footer>
+
+</div>
+</body>
+</html>
